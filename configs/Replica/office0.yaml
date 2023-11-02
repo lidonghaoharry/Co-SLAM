@@ -7,5 +7,5 @@ mapping:
 data:
   datadir: /home/lidonghao/ROB590research/data/Replica/office0
   trainskip: 1
-  output: /home/lidonghao/ROB590research/results/Replica/coslam/office0/rgbd
+  output: /home/lidonghao/ROB590research/results/Replica/coslam/office0
   exp_name: demo

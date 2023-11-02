@@ -144,7 +144,7 @@ def evaluate_ate(first_list, second_list, plot="", _args=""):
     parser.add_argument(
         '--max_difference', help='maximally allowed time difference for matching entries (default: 0.02)', default=0.02)
     parser.add_argument(
-        '--save', help='save aligned second trajectory to disk (format: stamp2 x2 y2 z2)')
+        '--save', default="/home/lidonghao/ROB590research/results/Replica/coslam/office0/saved_est_traj.txt", help='save aligned second trajectory to disk (format: stamp2 x2 y2 z2)')
     parser.add_argument('--save_associations',
                         help='save associated first and aligned second trajectory to disk (format: stamp1 x1 y1 z1 stamp2 x2 y2 z2)')
     parser.add_argument(
@@ -280,6 +280,8 @@ def pose_evaluation(poses_gt, poses_est, scale, path_to_save, i, img='pose', nam
     poses_gt, mask = convert_poses(poses_gt, N, scale)
     poses_est, _ = convert_poses(poses_est, N, scale)
     poses_est = poses_est[mask]
+    est_traj_path = os.path.join(path_to_save, 'est_traj_{}.txt'.format(i))
+    np.savetxt( est_traj_path , poses_est.cpu().numpy(), delimiter= " ", fmt = "%.10f")
     plt_path = os.path.join(path_to_save, '{}_{}.png'.format(img, i))
 
     results = evaluate(poses_gt, poses_est, plot=plt_path)
