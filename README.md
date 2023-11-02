@@ -31,7 +31,7 @@ This repository contains the code for the paper Co-SLAM: Joint Coordinate and Sp
 Please follow the instructions below to install the repo and dependencies.
 
 ```bash
-git clone https://github.com/HengyiWang/Co-SLAM.git
+git clone https://github.com/lidonghaoharry/Co-SLAM.git
 cd Co-SLAM
 ```
 
@@ -116,6 +116,10 @@ You can run Co-SLAM using the code below:
 
 ```
 python coslam.py --config './configs/{Dataset}/{scene}.yaml 
+```
+
+```
+python coslam.py --config './configs/Replica/office0.yaml 
 ```
 
 
